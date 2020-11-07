@@ -30,18 +30,18 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context,
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
     }
 
-    fun addUser(userInfo: UserInfo) : Boolean {
-        val db = this.writableDatabase
-        val value = ContentValues()
-
-        value.put(DEVICEID, userInfo.device_id)
-        value.put(SNSID, userInfo.sns_id)
-
-        val _success = db.insert(TABLE_USER, null, value)
-        db.close()
-
-        return (Integer.parseInt("$_success") != -1)
-    }
+//    fun addUser(userInfo: UserInfo) : Boolean {
+//        val db = this.writableDatabase
+//        val value = ContentValues()
+//
+//        value.put(DEVICEID, userInfo.device_id)
+//        value.put(SNSID, userInfo.sns_id)
+//
+//        val _success = db.insert(TABLE_USER, null, value)
+//        db.close()
+//
+//        return (Integer.parseInt("$_success") != -1)
+//    }
 
     fun getUser(sns_id : String) : UserInfo? {
         var db = readableDatabase
