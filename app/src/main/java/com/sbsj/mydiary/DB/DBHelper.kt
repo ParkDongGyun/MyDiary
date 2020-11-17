@@ -30,7 +30,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context,
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
     }
 
-    fun addUser(userInfo: UserInfo) : Boolean {
+    /*fun addUser(userInfo: UserInfo) : Boolean {
         val db = this.writableDatabase
         val value = ContentValues()
 
@@ -41,7 +41,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context,
         db.close()
 
         return (Integer.parseInt("$_success") != -1)
-    }
+    }*/
 
     fun getUser(sns_id : String) : UserInfo? {
         var db = readableDatabase
